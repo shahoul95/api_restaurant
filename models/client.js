@@ -13,24 +13,24 @@ const clientSchema = new mongoose.Schema({
   adresse: {
     type: Object,
     required: true,
-    
+
   },
-  telephone : {
+  telephone: {
     type: Number,
-    required : true,
-    unique:true,
+    required: true,
+    unique: true,
   },
   mail: {
     type: String,
     required: true,
-    unique:true,
-  
+    unique: true,
+
   },
   password: {
     type: String,
     required: true,
   },
-  
+
 
 });
 // la fonction pre() avant de sauvegarder dans la base de donnée , il attend le mot de passe du client et apres il va le hasher crypter.

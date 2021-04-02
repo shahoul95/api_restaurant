@@ -13,9 +13,9 @@ const paiementSchema = new mongoose.Schema({
     required: true
 
   }
- 
- 
+
+
 });
 
-const Paiement= mongoose.model('Paiement', paiementSchema);
-module.exports =Paiement;
+const Paiement = mongoose.model('Paiement', paiementSchema);
+module.exports = Paiement;

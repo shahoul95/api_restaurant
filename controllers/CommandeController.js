@@ -25,7 +25,7 @@ const CommandeController = {
       });
   },
   CreateOrder: async (req, res) => {
-    const { nom, prenom, telephone, adresse} = req.body.client;
+    const { nom, prenom, telephone, adresse } = req.body.client;
     const { id } = req.body.user;
     try {
 

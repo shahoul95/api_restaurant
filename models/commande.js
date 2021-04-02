@@ -2,31 +2,31 @@ const mongoose = require("mongoose");
 
 
 const commandeSchema = new mongoose.Schema({
-  nom : {
-    type : String,
-    required : true,
-  },
-  prenom : {
+  nom: {
     type: String,
-    required : true,
+    required: true,
   },
-  telephone : {
+  prenom: {
+    type: String,
+    required: true,
+  },
+  telephone: {
     type: Number,
-    required : true
+    required: true
   },
-  adresse : {
-    type : Object,
-    required : true,
+  adresse: {
+    type: Object,
+    required: true,
   },
-  
-  client : {
-    type : mongoose.Types.ObjectId,
-    ref : 'Client',
-    required : false
+
+  client: {
+    type: mongoose.Types.ObjectId,
+    ref: 'Client',
+    required: false
 
   },
- 
-  
+
+
 });
 
 const Commande = mongoose.model('Commande', commandeSchema);

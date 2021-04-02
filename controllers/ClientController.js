@@ -37,7 +37,7 @@ const ClientController = {
             if (!match) {
                 return res.status(401).send("Erreur de mot de passe et/ou d'utilisateur");
             }
-          
+
             generatetoken.generateToken().then(response => {
                 console.log(response.data.access_token);
                 const user_id = {
@@ -66,49 +66,48 @@ const ClientController = {
                 res.status(500).send("Erreur/ id n'existe pas");
             });
     },
-    ProfileUpdate: async (req,res) => {
+    ProfileUpdate: async (req, res) => {
         try {
             const { id } = req.params;
             const acceptedFieldToUpdate = [
-              "nom",
-              "prenom",
-              "adresse",
-              "telephone",
-              "mail",
-              "password"
+                "nom",
+                "prenom",
+                "adresse",
+                "telephone",
+                "mail",
+                "password"
             ];
             const keys = Object.keys(req.body).filter((key) =>
-      
-        
-              acceptedFieldToUpdate.includes(key)
-      
+
+
+                acceptedFieldToUpdate.includes(key)
+
             );
-            
+
             const fieldsToUpdate = {};
-            keys.map((key) => 
-                {
-                
-                
+            keys.map((key) => {
+
+
                 fieldsToUpdate[key] = req.body[key]
-                
-                }
-                
-                );
-           const hash = await argon2.hash(fieldsToUpdate.password);
-           const fieldToUpdates ={ mail : fieldsToUpdate.mail  , telephone : fieldsToUpdate.telephone , password : hash};
-           console.log(fieldToUpdates)
-   console.log(id);
- 
-        const data = await Client.findByIdAndUpdate(id, fieldToUpdates, {
-            new: true,
-            
-          });
-          res.status(200).json({success : true,data});
- 
-          
-          } catch(error) {
+
+            }
+
+            );
+            const hash = await argon2.hash(fieldsToUpdate.password);
+            const fieldToUpdates = { mail: fieldsToUpdate.mail, telephone: fieldsToUpdate.telephone, password: hash };
+            console.log(fieldToUpdates)
+            console.log(id);
+
+            const data = await Client.findByIdAndUpdate(id, fieldToUpdates, {
+                new: true,
+
+            });
+            res.status(200).json({ success: true, data });
+
+
+        } catch (error) {
             res.status(500).send(error);
-          }
+        }
     }
 };
 
