@@ -8,6 +8,7 @@ const clientRouter = require("./routers/clients");
 const panierpriseRouter = require('./routers/panierprise');
 const paiement = require('./routers/paiement');
 const mail = require('./routers/mail');
+const forgotpassword = require('./routers/forgotpassword')
 // const billetRouter = require("./routers/billets");
 // const incriptionRouter = require("./routers/inscription");
 // const authRouter = require("./routers/auth");
@@ -57,6 +58,7 @@ app.use(clientRouter);
 app.use(panierpriseRouter);
 app.use(paiement);
 app.use(mail);
+app.use(forgotpassword);
 // app.use(billetRouter);
 // app.use(incriptionRouter);
 // app.use(authRouter);

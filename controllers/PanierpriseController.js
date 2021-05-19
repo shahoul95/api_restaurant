@@ -3,7 +3,7 @@ const Panierprise = require('../models/panierprise');
 
 const PanierpriseController = {
 
-  getAllOrderProduct: async (req, res) => {
+    Getallbasket: async (req, res) => {
     await Panierprise.find().populate('commande')
       .then((data) => {
         console.log(data);
@@ -13,7 +13,7 @@ const PanierpriseController = {
         res.status(500).send("Erreur lors de la récupération des données");
       });
   },
-  getAllOrderProductId: async (req, res) => {
+  getAllBasketId: async (req, res) => {
     const { id } = req.params;
     let result = await Panierprise.find({ commande: id }).populate('commande')
       .then((data) => {
@@ -26,7 +26,7 @@ const PanierpriseController = {
       });
 
   },
-  getAllOrderProductClient: async (req, res) => {
+  getAllBasketProductClient: async (req, res) => {
     const { id } = req.params;
     let result = await Panierprise.find({ clientid: id }).populate('clientid')
       .then((data) => {
@@ -39,7 +39,7 @@ const PanierpriseController = {
       });
 
   },
-  CreateOrderproduct: async (req, res) => {
+  NewCreateBasket: async (req, res) => {
 
     try {
 
