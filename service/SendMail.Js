@@ -36,7 +36,7 @@ async function SendMail(produit, total) {
   });
 
   var mailOptions = {
-    from: process.env.MAIL_USERNAME || "shahoul95@gmail.com" ,
+    from: process.env.MAIL_USERNAME || "shahoul95@gmail.com",
     to: emailclients,
     subject: 'Sapori Di Casa',
     html: "<h3>Bonjour :  " + commandeclientnom + " " + commandeclientprenom + "   </h3> <h5>Adresse postale : " + adresse + "</h5>  <h5>Téléphone: +33" + telephone + "</h5>     <p>Commande: </p><ul>" + results + "</ul><hr><h3> Montant total : " + total + "€" + "</h3>"
