@@ -43,7 +43,7 @@ const PaiementController = {
     } else {
       let cliendid = await Client.findById(result[0].commande.client).then((data) => { resultarray = [result, data]; return resultarray; }).catch((err) => { console.log('ok') });
       let maps = cliendid;
-      await SendEmail.SendeMail(maps, amount).then(response => {
+      await SendEmail.SendMail(maps, amount).then(response => {
 
         res.status(200).json(response);
       }).catch((error) => {
