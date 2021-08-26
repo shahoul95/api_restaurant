@@ -54,7 +54,7 @@ app.use(cors());
 
 app.use(produitRouter);
 app.use(commandeRouter);
-app.use('/',clientRouter);
+app.use(clientRouter);
 app.use(panierpriseRouter);
 app.use(paiement);
 app.use(mail);
