@@ -1,7 +1,7 @@
 const Paiement = require('../models/paiement');
 const Panierprise = require('../models/panierprise');
 const Client = require('../models/client');
-const SendEmail = require('../service/SendMail');
+// const SendEmail = require('../service/SendMail');
 const stripe = require('stripe')('sk_test_51HvkmdHP35dfkCD3aFpqlebiIQLZyrkvBMaThdc7e1Yw0hk8wyMDZqhkB02oMYyZHfyCWTSwzHxYB2fOVtXdY71f00KQsx0zFj');
 const PaiementController = {
   CreatePayment: async (req, res) => {
@@ -43,13 +43,13 @@ const PaiementController = {
     } else {
       let cliendid = await Client.findById(result[0].commande.client).then((data) => { resultarray = [result, data]; return resultarray; }).catch((err) => { console.log('ok') });
       let maps = cliendid;
-      await SendEmail.SendMails(maps, amount).then(response => {
+      // await SendEmail.SendMails(maps, amount).then(response => {
 
-        res.status(200).json(response);
-      }).catch((error) => {
-        console.error(error);
+      //   res.status(200).json(response);
+      // }).catch((error) => {
+      //   console.error(error);
 
-      });
+      // });
     }
 
   }
