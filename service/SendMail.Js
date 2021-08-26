@@ -26,16 +26,17 @@ async function SendMail(produit, total) {
     service: 'gmail',
     auth: {
       type: "OAuth2",
-      user: process.env.MAIL_USERNAME,
-      pass: process.env.MAIL_PASSWORD,
-      clientId: process.env.OAUTH_CLIENTID,
-      clientSecret: process.env.OAUTH_CLIENT_SECRET,
-      refreshToken: process.env.OAUTH_REFRESH_TOKEN
+      user: process.env.MAIL_USERNAME || "shahoul95@gmail.com",
+      pass: process.env.MAIL_PASSWORD || "Shaik95140@",
+      clientId: process.env.OAUTH_CLIENTID || "173027648047-hqfeojh5clmgbusjin191s8uv87df3gh.apps.googleusercontent.com",
+      clientSecret: process.env.OAUTH_CLIENT_SECRET || "5Q93hJGgs1Aya1bmcF2Qs7C1",
+      refreshToken: process.env.OAUTH_REFRESH_TOKEN || "1//040-uGKr9O83XCgYIARAAGAQSNwF-L9IrWEVFDopWA6V8xTuylhmGdm2vFPmvEHzv3uqJkGTPec3XJMicO9vcVsr4aiuY4zYyYBU"
+
     }
   });
 
   var mailOptions = {
-    from: process.env.MAIL_USERNAME,
+    from: process.env.MAIL_USERNAME || "shahoul95@gmail.com" ,
     to: emailclients,
     subject: 'Sapori Di Casa',
     html: "<h3>Bonjour :  " + commandeclientnom + " " + commandeclientprenom + "   </h3> <h5>Adresse postale : " + adresse + "</h5>  <h5>Téléphone: +33" + telephone + "</h5>     <p>Commande: </p><ul>" + results + "</ul><hr><h3> Montant total : " + total + "€" + "</h3>"
