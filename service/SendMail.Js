@@ -3,7 +3,7 @@ require("dotenv").config();
 
 
 
-async function SendMail(produit, total) {
+async function SendMails(produit, total) {
 
 
   let produits = produit.map(element => {
@@ -58,4 +58,4 @@ async function SendMail(produit, total) {
 
 
 }
-module.exports.SendMail = SendMail;
+module.exports.SendMails = SendMails;
