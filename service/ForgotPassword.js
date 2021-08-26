@@ -1,5 +1,5 @@
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
+const accountSid = process.env.TWILIO_ACCOUNT_SID || "ACafae9516d785e905bfb7f0e7c7ca368a";
+const authToken = process.env.TWILIO_AUTH_TOKEN || "6c140e401687d883f9f776f2e678efdb";
 const client = require('twilio')(accountSid, authToken);
 const argon2 = require("argon2");
 const Client = require('../models/client');
