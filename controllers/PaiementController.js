@@ -1,9 +1,8 @@
 const Paiement = require('../models/paiement');
 const Panierprise = require('../models/panierprise');
 const Client = require('../models/client');
-
+const sendemail = require('../service/Sendmail');
 const stripe = require('stripe')('sk_test_51HvkmdHP35dfkCD3aFpqlebiIQLZyrkvBMaThdc7e1Yw0hk8wyMDZqhkB02oMYyZHfyCWTSwzHxYB2fOVtXdY71f00KQsx0zFj');
-const sendemail = require('../service/SendMail');
 const PaiementController = {
   CreatePayment: async (req, res) => {
     const { montantotal, commandeid, token } = req.body
@@ -50,7 +49,7 @@ const PaiementController = {
           res.status(200).json(response);
         }).catch((error) => {
           console.error(error);
-         
+
         });
       } catch (error) {
         console.log(error);
