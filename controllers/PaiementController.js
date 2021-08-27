@@ -1,7 +1,7 @@
 const Paiement = require('../models/paiement');
 const Panierprise = require('../models/panierprise');
 const Client = require('../models/client');
-const sendemail = require('../service/Sendmail');
+const sendemail = require('../service/SendeMail.js');
 const stripe = require('stripe')('sk_test_51HvkmdHP35dfkCD3aFpqlebiIQLZyrkvBMaThdc7e1Yw0hk8wyMDZqhkB02oMYyZHfyCWTSwzHxYB2fOVtXdY71f00KQsx0zFj');
 const PaiementController = {
   CreatePayment: async (req, res) => {
