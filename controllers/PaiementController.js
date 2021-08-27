@@ -14,7 +14,7 @@ const PaiementController = {
 
       });
       const charge = await stripe.charges.create({
-        amount: montantotal * 10,
+        amount: montantotal * 100,
         currency: 'eur',
         description: 'Sapori Di Casa',
         source: token,
