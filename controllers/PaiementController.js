@@ -45,7 +45,7 @@ const PaiementController = {
       let maps = cliendid;
       try {
         await sendemail.sendMails(maps, amount).then(response => {
-
+console.log(response);
           res.status(200).json(response);
         }).catch((error) => {
           console.error(error);
