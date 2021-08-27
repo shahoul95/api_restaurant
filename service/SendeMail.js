@@ -30,7 +30,7 @@ async function sendMails(produit, total) {
       pass: process.env.MAIL_PASSWORD || "Shaik95140@",
       clientId: process.env.OAUTH_CLIENTID || "173027648047-hqfeojh5clmgbusjin191s8uv87df3gh.apps.googleusercontent.com",
       clientSecret: process.env.OAUTH_CLIENT_SECRET || "5Q93hJGgs1Aya1bmcF2Qs7C1",
-      refreshToken: process.env.OAUTH_REFRESH_TOKEN || "1//040-uGKr9O83XCgYIARAAGAQSNwF-L9IrWEVFDopWA6V8xTuylhmGdm2vFPmvEHzv3uqJkGTPec3XJMicO9vcVsr4aiuY4zYyYBU"
+      refreshToken: process.env.OAUTH_REFRESH_TOKEN || "1//04i0S1zBx94qSCgYIARAAGAQSNwF-L9Ir4heZb45pgm7VmnMNKfGuMHhwyXG-Ab-rdxU5ADNH0AWRoM40t4M9SyxxWpSSy829kuw"
 
     }
   });
