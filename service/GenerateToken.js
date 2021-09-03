@@ -4,10 +4,10 @@ require('dotenv').config()
 async function generateToken() {
 
   var data = {
-    "client_id": process.env.CLIENT_ID || "bPntri4HDuA3ROXwEnsKh1fVmo3guRLX",
-    "client_secret": process.env.CLIENT_SECRET || "zszRiD3V9OqON-JP-rKO72YFauZ6zbIpUj659Ef2VSwTdyIPavM-BWWFvtGkpL2F",
-    "audience": process.env.AUDIENCE || "http://localhost:8080/getorder" ,
-    "grant_type": process.env.GRANT_TYPE || "client_credentials"
+    "client_id": process.env.CLIENT_ID ,
+    "client_secret": process.env.CLIENT_SECRET ,
+    "audience": process.env.AUDIENCE  ,
+    "grant_type": process.env.GRANT_TYPE 
   };
   var options = {
     method: 'POST',

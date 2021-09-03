@@ -26,11 +26,11 @@ async function sendMails(produit, total) {
     service: 'gmail',
     auth: {
       type: "OAuth2",
-      user: process.env.MAIL_USERNAME || "shahoul95@gmail.com",
-      pass: process.env.MAIL_PASSWORD || "Shaik95140@",
-      clientId: process.env.OAUTH_CLIENTID || "173027648047-hqfeojh5clmgbusjin191s8uv87df3gh.apps.googleusercontent.com",
-      clientSecret: process.env.OAUTH_CLIENT_SECRET || "5Q93hJGgs1Aya1bmcF2Qs7C1",
-      refreshToken: process.env.OAUTH_REFRESH_TOKEN || "1//04Ol7uvrNT51ACgYIARAAGAQSNwF-L9Irk_6EqRhy8HpEM2MY0PtbAqZDglUJufHLlpcWRSGIItVLZDWkDyB6pLuRrQhirJgYn_I"
+      user: process.env.MAIL_USERNAME ,
+      pass: process.env.MAIL_PASSWORD ,
+      clientId: process.env.OAUTH_CLIENTID ,
+      clientSecret: process.env.OAUTH_CLIENT_SECRET ,
+      refreshToken: process.env.OAUTH_REFRESH_TOKEN 
 
     }
   });
